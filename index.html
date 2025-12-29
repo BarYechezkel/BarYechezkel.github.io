@@ -55,11 +55,10 @@
         }
 
         .mobile-dock {
-            /* Transparency adjusted */
-            background: rgba(255, 255, 255, 0.75); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
             border-top: 1px solid rgba(0,0,0,0.05); box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
         }
-        .dark .mobile-dock { background: rgba(20, 20, 20, 0.75); border-top: 1px solid rgba(255,255,255,0.1); }
+        .dark .mobile-dock { background: rgba(20, 20, 20, 0.85); border-top: 1px solid rgba(255,255,255,0.1); }
 
         .tilt-card { 
             transform-style: preserve-3d; perspective: 1000px; backface-visibility: hidden; 
@@ -129,16 +128,16 @@
         </div>
     </nav>
 
-    <div class="fixed top-0 left-0 right-0 py-2 px-4 flex justify-between items-center z-40 md:hidden bg-white/10 dark:bg-black/10 backdrop-blur-md border-b border-white/5">
+    <div class="fixed top-0 left-0 right-0 p-4 flex justify-between items-center z-40 md:hidden bg-white/10 dark:bg-black/10 backdrop-blur-md border-b border-white/5">
         <span class="font-black text-xl tracking-tighter">BY<span class="text-blue-500">.</span></span>
-        <button id="mobile-theme-toggle" class="w-8 h-8 rounded-full bg-white/20 dark:bg-white/10 flex items-center justify-center">
-            <i class="fas fa-moon dark:hidden text-slate-700 text-sm"></i>
-            <i class="fas fa-sun hidden dark:block text-yellow-300 text-sm"></i>
+        <button id="mobile-theme-toggle" class="w-9 h-9 rounded-full bg-white/20 dark:bg-white/10 flex items-center justify-center">
+            <i class="fas fa-moon dark:hidden text-slate-700"></i>
+            <i class="fas fa-sun hidden dark:block text-yellow-300"></i>
         </button>
     </div>
 
     <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden mobile-dock pb-safe">
-        <div class="flex justify-around items-center py-2 px-2">
+        <div class="flex justify-around items-center py-3 px-2">
             <a href="#about" class="flex flex-col items-center gap-1 text-xs font-medium opacity-70 hover:text-blue-500 hover:opacity-100 transition-colors"><i class="fas fa-user text-lg"></i><span>About</span></a>
             <a href="#skills" class="flex flex-col items-center gap-1 text-xs font-medium opacity-70 hover:text-blue-500 hover:opacity-100 transition-colors"><i class="fas fa-microchip text-lg"></i><span>Skills</span></a>
             <a href="#projects" class="flex flex-col items-center gap-1 text-xs font-medium opacity-70 hover:text-blue-500 hover:opacity-100 transition-colors"><i class="fas fa-code text-lg"></i><span>Projects</span></a>
@@ -151,7 +150,7 @@
             
             <p class="text-sm md:text-lg font-bold text-blue-500 dark:text-blue-400 mb-2 tracking-widest uppercase">Hi there, I'm</p>
 
-            <h1 class="name-hover text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tight leading-none text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-300 dark:to-white md:hover:tracking-wide active:scale-95 active:opacity-80 transition-all duration-300 cursor-default select-none">
+            <h1 class="name-hover text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tight leading-none text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-300 dark:to-white md:hover:tracking-wide transition-all duration-500 cursor-default">
                 Bar Yechezkel
             </h1>
             
@@ -328,7 +327,7 @@
             ];
 
             const projectData = {
-                "cpp-catan-oop": { 
+           "cpp-catan-oop": { 
                     lang: "C++", 
                     tags: ["Game Logic", "OOP"] 
                 },
