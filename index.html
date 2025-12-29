@@ -148,7 +148,9 @@
     <section id="about" class="min-h-screen flex flex-col justify-center items-center px-6 text-center relative overflow-hidden pt-20 md:pt-0">
         <div data-aos="zoom-in" data-aos-duration="1200" class="max-w-4xl mx-auto">
             
-            <h1 class="name-hover text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tight leading-none text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-300 dark:to-white hover:tracking-wide transition-all duration-500 cursor-default">
+            <p class="text-sm md:text-lg font-bold text-blue-500 dark:text-blue-400 mb-2 tracking-widest uppercase">Hi there, I'm</p>
+
+            <h1 class="name-hover text-5xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tight leading-none text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-slate-700 to-slate-900 dark:from-white dark:via-slate-300 dark:to-white md:hover:tracking-wide transition-all duration-500 cursor-default">
                 Bar Yechezkel
             </h1>
             
@@ -193,6 +195,7 @@
                         <span class="skill-pill"><i class="fab fa-microsoft text-purple-400"></i> C#</span>
                         <span class="skill-pill"><i class="fab fa-python text-yellow-400"></i> Python</span>
                         <span class="skill-pill"><i class="fab fa-java text-red-400"></i> Java</span>
+                        <span class="skill-pill"><i class="fab fa-js text-yellow-300"></i> JavaScript</span>
                     </div>
                 </div>
             </div>
@@ -324,7 +327,7 @@
             ];
 
             const projectData = {
-             "cpp-catan-oop": { 
+           "cpp-catan-oop": { 
                     lang: "C++", 
                     tags: ["Game Logic", "OOP"] 
                 },
@@ -375,6 +378,9 @@
                 
                 const tagsHtml = displayTags.map(tag => `<span class="project-tag">${tag}</span>`).join('');
 
+                // Replace underscores/hyphens with spaces for display only
+                const displayName = repo.name.replace(/[_-]/g, ' ');
+
                 card.innerHTML = `
                     <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div class="tilt-inner flex flex-col h-full">
@@ -384,7 +390,7 @@
                             </div>
                         </div>
                         
-                        <h3 class="text-xl md:text-2xl font-black mb-2 relative z-10 leading-tight">${repo.name}</h3>
+                        <h3 class="text-xl md:text-2xl font-black mb-2 relative z-10 leading-tight break-words">${displayName}</h3>
                         
                         <div class="mb-4 relative z-10 flex flex-wrap gap-2 items-center">
                              <span class="project-tag">${displayLang}</span>
@@ -437,5 +443,4 @@
         });
     </script>
 </body>
-
 </html>
