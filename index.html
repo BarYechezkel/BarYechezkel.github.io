@@ -97,6 +97,33 @@
         .dark .project-tag { background-color: rgba(59, 130, 246, 0.15); color: #93c5fd; border-color: rgba(59, 130, 246, 0.3); }
         .project-tag:hover { transform: translateY(-2px); background-color: rgba(59, 130, 246, 0.25); border-color: rgba(59, 130, 246, 0.5); box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2); }
         .dark .project-tag:hover { background-color: rgba(59, 130, 246, 0.35); color: white; }
+        .tooltip {
+    position: relative;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    right: 110%;
+    top: 50%;
+    transform: translateY(-50%) scale(0.95);
+    background: rgba(15, 23, 42, 0.9);
+    color: white;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(10px);
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
     </style>
 </head>
 <body class="text-slate-900 dark:text-white antialiased selection:bg-blue-500 selection:text-white transition-colors duration-500 min-h-screen bg-slate-50 dark:bg-[#050505] pb-24 md:pb-0">
@@ -141,8 +168,11 @@
             <a href="#about" class="flex flex-col items-center gap-1 text-xs font-medium opacity-70 hover:text-blue-500 hover:opacity-100 transition-colors"><i class="fas fa-user text-lg"></i><span>About</span></a>
             <a href="#skills" class="flex flex-col items-center gap-1 text-xs font-medium opacity-70 hover:text-blue-500 hover:opacity-100 transition-colors"><i class="fas fa-microchip text-lg"></i><span>Skills</span></a>
             <a href="#projects" class="flex flex-col items-center gap-1 text-xs font-medium opacity-70 hover:text-blue-500 hover:opacity-100 transition-colors"><i class="fas fa-code text-lg"></i><span>Projects</span></a>
-            <a href="https://github.com/BarYechezkel" target="_blank" class="flex flex-col items-center gap-1 text-xs font-medium opacity-70 hover:text-blue-500 hover:opacity-100 transition-colors"><i class="fab fa-github text-lg"></i><span>Git</span></a>
-        </div>
+            <a href="https://www.linkedin.com/in/bar-yechezkel/" target="_blank"
+            class="flex flex-col items-center gap-1 text-xs font-medium opacity-70 hover:text-blue-500 hover:opacity-100 transition-colors">
+            <i class="fab fa-linkedin text-lg"></i>
+            <span>LinkedIn</span>
+         </a>        </div>
     </div>
 
     <section id="about" class="min-h-screen flex flex-col justify-center items-center px-6 text-center relative overflow-hidden pt-20 md:pt-0">
@@ -263,16 +293,32 @@
             </div>
         </div>
     </section>
+    <footer class="relative min-h-[50vh] flex flex-col py-20 px-6 text-center z-10">
 
-    <footer class="py-20 px-6 text-center relative z-10">
-        <h3 class="text-3xl md:text-4xl font-black mb-6">Let’s build something great</h3>
-        <p class="opacity-70 max-w-xl mx-auto mb-10">Open to software engineering roles and challenging systems.</p>
-        <div class="flex justify-center gap-6 flex-wrap">
-            <a href="https://github.com/BarYechezkel" target="_blank" class="contact-icon"><i class="fab fa-github"></i></a>
-            <a href="mailto:baryechezkel@gmail.com" class="contact-icon"><i class="fas fa-envelope text-red-400"></i></a>
-            <a href="https://www.linkedin.com/in/bar-yechezkel/" target="_blank" class="contact-icon"><i class="fab fa-linkedin-in text-blue-500"></i></a>
+        <h3 class="text-3xl md:text-4xl font-black mb-6">
+            Let’s build something great
+        </h3>
+    
+        <p class="opacity-70 max-w-xl mx-auto mb-10">
+            Open to software engineering roles and challenging systems.
+        </p>
+    
+        <div class="flex justify-center gap-6 flex-wrap mb-12">
+            <a href="https://github.com/BarYechezkel" target="_blank" class="contact-icon">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:baryechezkel@gmail.com" class="contact-icon">
+                <i class="fas fa-envelope text-red-400"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/bar-yechezkel/" target="_blank" class="contact-icon">
+                <i class="fab fa-linkedin-in text-blue-500"></i>
+            </a>
         </div>
-        <p class="mt-12 text-xs opacity-50 pb-10 md:pb-0">© 2025 Bar Yechezkel</p>
+    
+        <p class="mt-auto text-xs opacity-50 pb-10 md:pb-0">
+            © 2026 Bar Yechezkel
+        </p>
+    
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -448,5 +494,22 @@
             progressBar.style.width = `${progress}%`;
         });
     </script>
+    <!-- Floating Contact Buttons (Desktop) -->
+    <div class="hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 flex-col gap-4 z-50">
+    
+        <a href="https://www.linkedin.com/in/bar-yechezkel/" 
+           target="_blank"
+           class="contact-icon tooltip"
+           data-tooltip="Let’s connect">
+            <i class="fab fa-linkedin-in text-blue-500"></i>
+        </a>
+    
+        <a href="mailto:baryechezkel@gmail.com" 
+           class="contact-icon tooltip"
+           data-tooltip="Send me an email">
+            <i class="fas fa-envelope text-red-400"></i>
+        </a>
+    
+    </div>
 </body>
 </html>
